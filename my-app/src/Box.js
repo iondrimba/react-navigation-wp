@@ -16,7 +16,6 @@ class Box extends React.Component {
     }, 80 * index);
   }
   render() {
-    console.log(this.props)
     return (
       <Link to={this.props.path} className={`box ${this.state.css}`}>
         <h1>{this.props.title}</h1>
