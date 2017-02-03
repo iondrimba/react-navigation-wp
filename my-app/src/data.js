@@ -5,116 +5,102 @@ let data = {
       "path": "/",
       "thumb": "https://unsplash.it/250/150"
     },
-    "reforma": {
+    "option": {
       "model": {
-        "description": "reforma",
-        "title": "Reforma",
-        "path": "reforma",
-        "thumb": "https://unsplash.it/250/150"
+        "description": "option",
+        "title": "option",
+        "path": "option"
       },
-      "reforma A": {
+      "option 1": {
         "model": {
-          "description": "reforma A",
-          "title": "Reforma A",
-          "path": "reforma-a",
-          "thumb": "https://unsplash.it/250/150"
+          "description": "option 1",
+          "title": "option 1",
+          "path": "option-1"
         },
-        "reforma C": {
+        "option 2": {
           "model": {
-            "description": "reforma C",
-            "title": "Reforma C",
-            "path": "reforma-c",
-            "thumb": "https://unsplash.it/250/150"
+            "description": "option 2",
+            "title": "option 2",
+            "path": "option-2"
           }
         },
-        "reforma D": {
+        "option 3": {
           "model": {
-            "description": "reforma D",
-            "title": "reforma D",
-            "path": "reforma-d",
-            "thumb": "https://unsplash.it/250/150"
+            "description": "option 3",
+            "title": "option 3",
+            "path": "option-3"
           }
         }
       },
-      "reforma B": {
+      "option 4": {
         "model": {
-          "description": "reforma B",
-          "title": "reforma B",
-          "path": "reforma-b",
-          "thumb": "https://unsplash.it/250/150"
+          "description": "option 4",
+          "title": "option 4",
+          "path": "option-4"
         },
-        "reforma E": {
+        "option 5": {
           "model": {
-            "description": "reforma E",
-            "title": "reforma E",
-            "path": "reforma-e",
-            "thumb": "https://unsplash.it/250/150"
+            "description": "option 5",
+            "title": "option 5",
+            "path": "option-5"
           }
         },
-        "reforma F": {
+        "option 6": {
           "model": {
-            "description": "reforma F",
-            "title": "reforma F",
-            "path": "reforma-f",
-            "thumb": "https://unsplash.it/250/150"
+            "description": "option 6",
+            "title": "option 6",
+            "path": "option-6"
           }
         }
       }
     },
-    "evento": {
+    "option-7": {
       "model": {
-        "description": "Evento",
-        "title": "Evento",
-        "path": "evento",
-        "thumb": "https://unsplash.it/250/150"
+        "description": "option 7",
+        "title": "option 7",
+        "path": "option-7"
       },
-      "evento A": {
+      "option 8": {
         "model": {
-          "description": "Evento A",
-          "title": "Evento A",
-          "path": "evento-a",
-          "thumb": "https://unsplash.it/250/150"
+          "description": "option 8",
+          "title": "option 8",
+          "path": "option-8"
         },
-        "evento C": {
+        "option 9": {
           "model": {
-            "description": "Evento C",
-            "title": "Evento C",
-            "path": "evento-c",
-            "thumb": "https://unsplash.it/250/150"
+            "description": "option 9",
+            "title": "option 9",
+            "path": "option-9"
           }
         },
-        "evento D": {
+        "option 10": {
           "model": {
-            "description": "Evento D",
-            "title": "Evento D",
-            "path": "evento-d",
-            "thumb": "https://unsplash.it/250/150"
+            "description": "option 10",
+            "title": "option 10",
+            "path": "option-10"
           }
         }
       },
-      "evento B": {
+      "option 11": {
         "model": {
-          "description": "Evento B",
-          "title": "Evento B",
-          "path": "evento-b",
-          "thumb": "https://unsplash.it/250/150"
+          "description": "option 11",
+          "title": "option 11",
+          "path": "option-11"
         }
       }
     },
-    "moda": {
+    "option 12": {
       "model": {
-        "description": "Moda",
-        "title": "Moda",
-        "path": "moda",
-        "thumb": "https://unsplash.it/250/150"
+        "description": "option 12",
+        "title": "option 12",
+        "path": "option-12"
       }
     },
-    "aulas": {
+    "option 13": {
       "model": {
-        "description": "Aulas",
-        "title": "Aulas",
-        "path": "aulas",
-        "thumb": "https://unsplash.it/250/150"
+        "description": "option 13",
+        "title": "option 13",
+        "path": "option-13"
       }
     }
   }

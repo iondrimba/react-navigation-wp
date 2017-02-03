@@ -1,8 +1,9 @@
 import React from 'react';
 import data from './data'
-import Box from './Box'
-import Hero from './Hero'
-import Title from './Title'
+import Box from './Box';
+import Hero from './Hero';
+import Title from './Title';
+import _ from 'lodash';
 
 class Home extends React.Component {
   constructor(props) {
@@ -15,11 +16,9 @@ class Home extends React.Component {
 
   }
   componentDidMount() {
-    console.log('mount', this.props.location);
     this.filter(this.props.location.pathname);
   }
   componentDidUpdate(prevProps, prevState) {
-    console.log('componentDidUpdate');
     let oldLocation = prevProps.location.pathname
     let newLocation = this.props.location.pathname
     if (newLocation !== oldLocation) {
@@ -72,24 +71,37 @@ class Home extends React.Component {
   getCurrentNode() { 
     return this.state.currentNode ? this.state.currentNode : this.props.nodes['/'];
   }
+  show() {
+    this.refs.title.animate();    
+     _.delay(()=> {   
+      let count = 0;    
+      for (var child in this.refs) {
+        if (this.refs.hasOwnProperty(child)) {
+           this.refs[child].animate('fade-in', count);
+           count++;              
+        }
+      }
+    }, 100);
+  }
   filter(key) {
     let node = this.getNodes(this.state.currentNode ? this.state.currentNode : this.props.nodes['/'], key);
     node = node ? node : this.getNodes(this.props.nodes, key);
     let list = this.getElements(node);
-    console.log('filter', node, list);
+    
     this.setState({ list: list, location: key, currentNode: node });
+
+    this.show();
   }
   render() {
-    
     return (
-      <div className="wrapper">
+      <div className='wrapper'>
         <Hero/>
-        <Title {...this.state.currentNode}/>
-        <div className="list">
+        <Title ref={'title'} {...this.state.currentNode}/>
+        <div className='list'>
         {
           this.state.list.map((elmt, index) => {
             return (
-              <Box key={index} {...elmt.model} />
+              <Box ref={`box-${index}`} key={elmt.model.path} {...elmt.model} />
             )
           })
         }

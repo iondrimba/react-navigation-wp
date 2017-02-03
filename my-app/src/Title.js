@@ -1,13 +1,30 @@
 import React from 'react';
+import _ from 'lodash';
 
 class Title extends React.Component {
-  shouldComponentUpdate(a,b) {
-    
-    if(a.model.title!==this.props.model.title) {
-      console.log('update', a.model.title,this.props.model.title)
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      css:''
+    }
+  }
+  componentWillReceiveProps(nextProps){
+    if(this.props.model.title!==nextProps.model.title) {
+      this.setState({css:'fade-out'});
+    }
+  }
+  shouldComponentUpdate(state) {
+    if(state.model.title!==this.props.model.title) {
       return true;
     }
     return false;
+  }
+  animate() {
+    _.delay(()=>{
+      this.setState({css:'fade-in'});
+      this.forceUpdate();
+    },100);
   }
   getTitle() {
     let output = '';
@@ -17,9 +34,8 @@ class Title extends React.Component {
     return output;
   }
   render() {
-    console.log('title', this.props.model.title);
     return (
-      <div className="title">
+      <div className={`title ${this.state.css}`}>
         <h1>{this.getTitle()}</h1>
       </div>
     )

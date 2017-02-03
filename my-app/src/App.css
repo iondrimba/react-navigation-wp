@@ -22,7 +22,6 @@
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }
@@ -34,7 +33,6 @@ h1 {
   padding: 0;
   text-decoration: none;
 }
-
 
 .wrapper {
   display: flex;
@@ -72,8 +70,16 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-    border-radius: 6px;
+  border-radius: 6px;
   overflow: hidden;
+  transform: translateY(40px);
+  transition: all .3s; 
+  opacity: 0; 
+}
+
+.box.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .box h1 {
@@ -81,17 +87,33 @@ h1 {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.39);
   width: 100%;
-    font-size: 16pt;
+  font-size: 16pt;
   padding: 10px;
   font-weight: 500;
   text-transform: capitalize;
 }
 
-.box img {
+.box div {
   display: block;
+  width: 250px;
+  height: 150px;
+  background-color: purple;
 }
 
 .title {
-    text-align: center;
+  text-align: center;
   padding: 30px;
+  transform: translateY(30px);
+  transition: all .3s;
+  opacity: 0;
+}
+
+.title.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.title.fade-out {
+  opacity: 0;
+  transition: all 0s;
 }

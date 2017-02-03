@@ -1,19 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router'
-import data from './data'
+import { Link } from 'react-router';
+import _ from 'lodash';
 
-class Home extends React.Component {
+class Box extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      css:''
+    }
+  }
+  animate(css, index) {
+    _.delay(()=> {
+      this.setState({css:css});
+    }, 100 * index);
+  }
   render() {
     return (
-      <Link to={this.props.path} className="box">
+      <Link to={this.props.path} className={`box ${this.state.css}`}>
         <h1>{this.props.title}</h1>
-        <img src={this.props.thumb} alt={this.props.description} />
+        <div></div>
       </Link>
     )
     
   }
 }
 
-Home.defaultProps = { nodes: data };
-
-export default Home;
+export default Box;
