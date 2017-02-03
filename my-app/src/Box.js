@@ -10,6 +10,7 @@ class Home extends React.Component {
         <img src={this.props.thumb} alt={this.props.description} />
       </Link>
     )
+    
   }
 }
 

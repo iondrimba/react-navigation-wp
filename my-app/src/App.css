@@ -57,6 +57,8 @@ h1 {
 .list {
   padding: 20px;
   display: flex;
+  width: 1100px;
+  margin: 0 auto;
 }
 
 .box {
@@ -70,6 +72,8 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+    border-radius: 6px;
+  overflow: hidden;
 }
 
 .box h1 {
@@ -77,8 +81,17 @@ h1 {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.39);
   width: 100%;
+    font-size: 16pt;
+  padding: 10px;
+  font-weight: 500;
+  text-transform: capitalize;
 }
 
 .box img {
   display: block;
+}
+
+.title {
+    text-align: center;
+  padding: 30px;
 }

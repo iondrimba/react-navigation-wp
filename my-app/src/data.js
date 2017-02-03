@@ -1,7 +1,7 @@
 let data = {
   "/": {
     "model": {
-      "title": "Root",
+      "title": "Escolha uma opção",
       "path": "/",
       "thumb": "https://unsplash.it/250/150"
     },
@@ -101,6 +101,22 @@ let data = {
         }
       }
     },
+    "moda": {
+      "model": {
+        "description": "Moda",
+        "title": "Moda",
+        "path": "moda",
+        "thumb": "https://unsplash.it/250/150"
+      }
+    },
+    "aulas": {
+      "model": {
+        "description": "Aulas",
+        "title": "Aulas",
+        "path": "aulas",
+        "thumb": "https://unsplash.it/250/150"
+      }
+    }
   }
 }
 

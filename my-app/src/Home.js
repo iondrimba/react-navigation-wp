@@ -2,21 +2,24 @@ import React from 'react';
 import data from './data'
 import Box from './Box'
 import Hero from './Hero'
+import Title from './Title'
 
 class Home extends React.Component {
   constructor(props) {
     super();
     this.state = {
       list: [],
-      location: '',
-      currentNode: props.nodes
+      location: '/',
+      currentNode: props.nodes['/']
     };
 
   }
   componentDidMount() {
+    console.log('mount', this.props.location);
     this.filter(this.props.location.pathname);
   }
   componentDidUpdate(prevProps, prevState) {
+    console.log('componentDidUpdate');
     let oldLocation = prevProps.location.pathname
     let newLocation = this.props.location.pathname
     if (newLocation !== oldLocation) {
@@ -66,18 +69,22 @@ class Home extends React.Component {
     }
     return this.traverseNodes(nodes, this.formatKey(key));
   }
-  getCurrentNode() {
-    return this.state.currentNode ? this.state.currentNode : this.props.nodes;
+  getCurrentNode() { 
+    return this.state.currentNode ? this.state.currentNode : this.props.nodes['/'];
   }
   filter(key) {
-    let currentNode = this.getNodes(this.getCurrentNode(), key);
-    let list = this.getElements(currentNode ? currentNode : this.getNodes(this.props.nodes, key));
-    this.setState({ list: list, location: key, currentNode: currentNode });
+    let node = this.getNodes(this.state.currentNode ? this.state.currentNode : this.props.nodes['/'], key);
+    node = node ? node : this.getNodes(this.props.nodes, key);
+    let list = this.getElements(node);
+    console.log('filter', node, list);
+    this.setState({ list: list, location: key, currentNode: node });
   }
   render() {
+    
     return (
       <div className="wrapper">
         <Hero/>
+        <Title {...this.state.currentNode}/>
         <div className="list">
         {
           this.state.list.map((elmt, index) => {
