@@ -72,9 +72,9 @@ h1 {
   justify-content: flex-end;
   border-radius: 6px;
   overflow: hidden;
-  transform: translateY(40px);
+  transform: translateY(0);
   transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-  opacity: 0; 
+  opacity: 1; 
   will-change: all;
 }
 
@@ -104,9 +104,9 @@ h1 {
 .title {
   text-align: center;
   padding: 30px;
-  transform: translateY(30px);
+  transform: translateY(0);
   transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  opacity: 0;
+  opacity: 1;
   will-change: all;
 }
 

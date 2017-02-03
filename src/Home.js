@@ -1,8 +1,8 @@
 import React from 'react';
 import data from './data'
-import Box from './Box';
 import Hero from './Hero';
 import Title from './Title';
+import Block from './Block';
 import _ from 'lodash';
 
 class Home extends React.Component {
@@ -72,23 +72,21 @@ class Home extends React.Component {
     return this.state.currentNode ? this.state.currentNode : this.props.nodes['/'];
   }
   show() {
-    this.refs.title.animate();    
-     _.delay(()=> {   
-      let count = 0;    
-      for (var child in this.refs) {
-        if (this.refs.hasOwnProperty(child)) {
-           this.refs[child].animate('fade-in', count);
-           count++;              
-        }
-      }
-    }, 100);
+    // this.refs.title.animate();    
+    //  _.delay(()=> {   
+    //   let count = 0;    
+    //   for (var child in this.refs) {
+    //     if (this.refs.hasOwnProperty(child)) {
+    //        this.refs[child].animate('fade-in', count);
+    //        count++;              
+    //     }
+    //   }
+    // }, 100);
   }
   filter(key) {
-    let node = this.getNodes(this.state.currentNode ? this.state.currentNode : this.props.nodes['/'], key);
-    node = node ? node : this.getNodes(this.props.nodes, key);
-    let list = this.getElements(node);
-    
-    this.setState({ list: list, location: key, currentNode: node });
+    let list = this.getElements(this.props.nodes);
+    this.setState({ list: list, location: key, currentNode:this.props.nodes['/'] });
+    console.log(list);
 
     this.show();
   }
@@ -96,16 +94,13 @@ class Home extends React.Component {
     return (
       <div className='wrapper'>
         <Hero/>
-        <Title ref={'title'} {...this.state.currentNode}/>
-        <div className='list'>
         {
           this.state.list.map((elmt, index) => {
             return (
-              <Box ref={`box-${index}`} key={elmt.model.path} {...elmt.model} />
+              <Block ref={`block-${index}`} key={index} node={elmt} list={this.getElements(elmt)} />
             )
           })
         }
-        </div>
       </div>
     )
   }
