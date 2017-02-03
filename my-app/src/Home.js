@@ -1,6 +1,7 @@
 import React from 'react';
 import data from './data'
 import Box from './Box'
+import Hero from './Hero'
 
 class Home extends React.Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class Home extends React.Component {
       for (var child in nodes) {
         if (nodes.hasOwnProperty(child)) {
           if (child !== 'model') {
-            if (nodes[child].model.texto === key) {
+            if (nodes[child].model.path === key) {
               return nodes[child];
             } else {
               if (nodes[key]) {
@@ -76,13 +77,16 @@ class Home extends React.Component {
   render() {
     return (
       <div className="wrapper">
+        <Hero/>
+        <div className="list">
         {
           this.state.list.map((elmt, index) => {
             return (
-              <Box key={index} img={elmt.model.thumb} texto={elmt.model.texto} />
+              <Box key={index} {...elmt.model} />
             )
           })
         }
+        </div>
       </div>
     )
   }
