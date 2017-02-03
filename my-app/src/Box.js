@@ -13,7 +13,7 @@ class Box extends React.Component {
   animate(css, index) {
     _.delay(()=> {
       this.setState({css:css});
-    }, 100 * index);
+    }, 80 * index);
   }
   render() {
     return (

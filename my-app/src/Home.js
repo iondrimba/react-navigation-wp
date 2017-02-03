@@ -63,7 +63,7 @@ class Home extends React.Component {
     return nodes[key];
   }
   getNodes(nodes, key) {
-    if (nodes[this.formatKey(key)]) {
+    if (nodes[this.formatKey(key)]) {  
       return nodes[this.formatKey(key)];
     }
     return this.traverseNodes(nodes, this.formatKey(key));
