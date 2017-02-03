@@ -1,0 +1,121 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  color: white;
+  height: 150px;
+  padding: 20px;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+a,
+h1 {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.hero {
+  display: inline-block;
+  width: 100%;
+  height: 300px;
+  background-color: #191969;
+  color: #fff;
+  padding: 20px;
+}
+
+.list {
+  padding: 20px;
+  display: flex;
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.box {
+  background-color: #333;
+  display: block;
+  margin-bottom: 10px;
+  max-width: 250px;
+  min-height: 150px;
+  position: relative;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 6px;
+  overflow: hidden;
+  transform: translateY(40px);
+  transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+  opacity: 0; 
+  will-change: all;
+}
+
+.box.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.box h1 {
+  color: #fff;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.39);
+  width: 100%;
+  font-size: 16pt;
+  padding: 10px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.box div {
+  display: block;
+  width: 250px;
+  height: 150px;
+  background-color: purple;
+}
+
+.title {
+  text-align: center;
+  padding: 30px;
+  transform: translateY(30px);
+  transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  will-change: all;
+}
+
+.title.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.title.fade-out {
+  opacity: 0;
+  transition: all 0s;
+}
