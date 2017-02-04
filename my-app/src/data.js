@@ -1,123 +1,230 @@
 let data = {
-  "/": {
-    "model": {
-      "title": "Escolha uma opção",
-      "path": "/",
-      "color": "purple"
-    },
-    "option": {
-      "model": {
-        "description": "option",
-        "title": "option",
-        "path": "option",
-        "color": "purple"
-      },
-      "option 1": {
-        "model": {
-          "description": "option 1",
-          "title": "option 1",
-          "path": "option-1",
-          "color": "#eae62a"
+  "type": "root",
+  "title": "Marceneiro",
+  "questions": [
+    {
+      "title": "Qual tipo de serviço que vc precisa?",
+      "description": null,
+      "path": "qual-tipo-de-servico-que-vc-precisa",
+      "color": "#1ABC9C",
+      "choices": [
+        {
+          "title": "Pisos e Decks",
+          "description": null,
+          "path": "pisos-e-decks",
+          "questions": [
+            {
+              "title": "Pisos e Decks 2",
+              "description": null,
+              "path": "pisos-e-decks-2",
+              "color": "#2ECC71",
+              "choices": [
+                {
+                  "title": "Armário",
+                  "description": null,
+                  "path": "armario",
+                  "questions": [
+                    {
+                      "title": "Pisos e Decks 3",
+                      "description": null,
+                      "path": "pisos-e-decks-3",
+                      "color": "#2ECC71",
+                      "choices": [
+                        {
+                          "title": "Escrivaninha 1",
+                          "description": null,
+                          "path": "escrivaninha1",
+                          "questions": []
+                        },
+                        {
+                          "title": "Guarda-roupas2",
+                          "description": null,
+                          "path": "guarda-roupas2",
+                          "questions": []
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Você tem preferencia no tipo de madeira?",
+                      "description": null,
+                      "path": "voce-tem-preferencia-no-tipo-de-madeira",
+                      "color": "#3498DB",
+                      "choices": [
+                        {
+                          "title": "Aglomerado",
+                          "description": null,
+                          "path": "aglomerado",
+                          "questions": []
+                        },
+                        {
+                          "title": "Compensado",
+                          "description": null,
+                          "path": "compensado",
+                          "questions": []
+                        },
+                        {
+                          "title": "MDF",
+                          "description": null,
+                          "path": "mdf",
+                          "questions": []
+                        },
+                        {
+                          "title": "Pau-brasil",
+                          "description": null,
+                          "path": "pau-brasil",
+                          "questions": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "Banco",
+                  "description": null,
+                  "path": "banco",
+                  "questions": []
+                },
+                {
+                  "title": "Cama",
+                  "description": null,
+                  "path": "cama",
+                  "questions": []
+                },
+                {
+                  "title": "Escrivaninha",
+                  "description": null,
+                  "path": "escrivaninha",
+                  "questions": []
+                },
+                {
+                  "title": "Guarda-roupas",
+                  "description": null,
+                  "path": "guarda-roupas",
+                  "questions": []
+                }
+              ]
+            },
+            {
+              "title": "Você tem preferencia no tipo de madeira?",
+              "description": null,
+              "path": "voce-tem-preferencia-no-tipo-de-madeira",
+              "color": "#3498DB",
+              "choices": [
+                {
+                  "title": "Aglomerado",
+                  "description": null,
+                  "path": "aglomerado",
+                  "questions": []
+                },
+                {
+                  "title": "Compensado",
+                  "description": null,
+                  "path": "compensado",
+                  "questions": []
+                },
+                {
+                  "title": "MDF",
+                  "description": null,
+                  "path": "mdf",
+                  "questions": []
+                },
+                {
+                  "title": "Pau-brasil",
+                  "description": null,
+                  "path": "pau-brasil",
+                  "questions": []
+                }
+              ]
+            }
+          ]
         },
-        "option 2": {
-          "model": {
-            "description": "option 2",
-            "title": "option 2",
-            "path": "option-2",
-            "color": "#14ab6d"
-          }
+        {
+          "title": "Projeto e Fabricação",
+          "description": null,
+          "path": "projeto-e-fabricacao",
+          "questions": [
+            {
+              "title": "Qual a sua ideia de projeto?",
+              "description": null,
+              "path": "qual-a-sua-ideia-de-projeto",
+              "color": "#2ECC71",
+              "choices": [
+                {
+                  "title": "Armário",
+                  "description": null,
+                  "path": "armario",
+                  "questions": []
+                },
+                {
+                  "title": "Banco",
+                  "description": null,
+                  "path": "banco",
+                  "questions": []
+                },
+                {
+                  "title": "Cama",
+                  "description": null,
+                  "path": "cama",
+                  "questions": []
+                },
+                {
+                  "title": "Escrivaninha",
+                  "description": null,
+                  "path": "escrivaninha",
+                  "questions": []
+                },
+                {
+                  "title": "Guarda-roupas",
+                  "description": null,
+                  "path": "guarda-roupas",
+                  "questions": []
+                }
+              ]
+            },
+            {
+              "title": "Você tem preferencia no tipo de madeira?",
+              "description": null,
+              "path": "voce-tem-preferencia-no-tipo-de-madeira",
+              "color": "#3498DB",
+              "choices": [
+                {
+                  "title": "Aglomerado",
+                  "description": null,
+                  "path": "aglomerado",
+                  "questions": []
+                },
+                {
+                  "title": "Compensado",
+                  "description": null,
+                  "path": "compensado",
+                  "questions": []
+                },
+                {
+                  "title": "MDF",
+                  "description": null,
+                  "path": "mdf",
+                  "questions": []
+                },
+                {
+                  "title": "Pau-brasil",
+                  "description": null,
+                  "path": "pau-brasil",
+                  "questions": []
+                }
+              ]
+            }
+          ]
         },
-        "option 3": {
-          "model": {
-            "description": "option 3",
-            "title": "option 3",
-            "path": "option-3",
-            "color": "#14ab6d"
-          }
+        {
+          "title": "Reparos e Acabamentos",
+          "description": null,
+          "path": "reparos-e-acabamentos",
+          "questions": []
         }
-      },
-      "option 4": {
-        "model": {
-          "description": "option 4",
-          "title": "option 4",
-          "path": "option-4",
-          "color": "#eae62a"
-        },
-        "option 5": {
-          "model": {
-            "description": "option 5",
-            "title": "option 5",
-            "path": "option-5",
-            "color": "purple"
-          }
-        },
-        "option 6": {
-          "model": {
-            "description": "option 6",
-            "title": "option 6",
-            "path": "option-6",
-            "color": "purple"
-          }
-        }
-      }
-    },
-    "option-7": {
-      "model": {
-        "description": "option 7",
-        "title": "option 7",
-        "path": "option-7",
-        "color": "purple"
-      },
-      "option 8": {
-        "model": {
-          "description": "option 8",
-          "title": "option 8",
-          "path": "option-8",
-          "color": "#4196e2"
-        },
-        "option 9": {
-          "model": {
-            "description": "option 9",
-            "title": "option 9",
-            "path": "option-9",
-            "color": "#e82f61"
-          }
-        },
-        "option 10": {
-          "model": {
-            "description": "option 10",
-            "title": "option 10",
-            "path": "option-10",
-            "color": "#e82f61"
-          }
-        }
-      },
-      "option 11": {
-        "model": {
-          "description": "option 11",
-          "title": "option 11",
-          "path": "option-11",
-          "color": "#4196e2"
-        }
-      }
-    },
-    "option 12": {
-      "model": {
-        "description": "option 12",
-        "title": "option 12",
-        "path": "option-12",
-        "color": "purple"
-      }
-    },
-    "option 13": {
-      "model": {
-        "description": "option 13",
-        "title": "option 13",
-        "path": "option-13",
-        "color": "purple"
-      }
+      ]
     }
-  }
+  ]
 }
+
 
 export default data;

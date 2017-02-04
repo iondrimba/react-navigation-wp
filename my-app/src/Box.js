@@ -7,22 +7,23 @@ class Box extends React.Component {
     super(props);
 
     this.state = {
-      css:''
+      css: ''
     }
   }
   animate(css, index) {
-    _.delay(()=> {
-      this.setState({css:css});
-    }, 80 * index);
+    _.delay(() => {
+      this.setState({ css: css });
+    }, 70 * index);
   }
   render() {
+
     return (
-      <Link to={this.props.path} className={`box ${this.state.css}`}>
+      <Link to={this.props.questions.length ? this.props.path : ""} className={`box ${this.state.css}`}>
         <h1>{this.props.title}</h1>
-        <div style={{backgroundColor: this.props.color}} ></div>
+        <div style={{ backgroundColor: this.props.color }} ></div>
       </Link>
     )
-    
+
   }
 }
 

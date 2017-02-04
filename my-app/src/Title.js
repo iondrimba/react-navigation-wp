@@ -6,30 +6,30 @@ class Title extends React.Component {
     super(props);
 
     this.state = {
-      css:''
+      css: ''
     }
   }
-  componentWillReceiveProps(nextProps){
-    if(this.props.model.title!==nextProps.model.title) {
-      this.setState({css:'fade-out'});
+  componentWillReceiveProps(nextProps) {
+    if (this.props.title !== nextProps.title) {
+      this.setState({ css: 'fade-out' });
     }
   }
   shouldComponentUpdate(state) {
-    if(state.model.title!==this.props.model.title) {
+    if (state.title !== this.props.title) {
       return true;
     }
     return false;
   }
   animate() {
-    _.delay(()=>{
-      this.setState({css:'fade-in'});
+    _.delay(() => {
+      this.setState({ css: 'fade-in' });
       this.forceUpdate();
-    },100);
+    }, 100);
   }
   getTitle() {
     let output = '';
-    if(this.props.model) {
-      output = this.props.model.title
+    if (this.props) {
+      output = this.props.title
     }
     return output;
   }

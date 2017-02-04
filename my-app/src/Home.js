@@ -9,9 +9,9 @@ class Home extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      list: [],
-      location: '/',
-      currentNode: props.nodes['/']
+      choices: [],
+      location: "",
+      currentQuetion: props.nodes.questions
     };
 
   }
@@ -25,86 +25,73 @@ class Home extends React.Component {
       this.filter(newLocation);
     }
   }
-  getElements(node) {
-    let output = [];
-    for (var child in node) {
-      if (node.hasOwnProperty(child)) {
-        if (child !== 'model') {
-          output.push(node[child]);
-        }
-      }
-    }
-    return output;
-  }
   formatKey(key) {
     if (key.length > 1) {
       key = key.replace(/\//, '');
     }
     return key;
   }
-  traverseNodes(nodes, key) {
-    if (!nodes[key]) {
-      for (var child in nodes) {
-        if (nodes.hasOwnProperty(child)) {
-          if (child !== 'model') {
-            if (nodes[child].model.path === key) {
-              return nodes[child];
-            } else {
-              if (nodes[key]) {
-                return nodes[child];
-              } else {
-                return this.traverseNodes(nodes[child], key);
-              }
-            }
-          }
-        }
+  traverseChoices(nodes, path) {
+    let output;
+    for (let i = 0; i < nodes.length; i++) {
+      if (nodes[i].path === path) {
+        this.props.router.replace(nodes[i].questions[0].path);
+        output = nodes[i].questions[0];
+      } else if (output === undefined) {
+        output = this.traverseQuestions(nodes[i].questions, path);
       }
     }
-    return nodes[key];
+    return output;
   }
-  getNodes(nodes, key) {
-    if (nodes[this.formatKey(key)]) {  
-      return nodes[this.formatKey(key)];
+  traverseQuestions(nodes, path) {
+    let output;
+    for (let i = 0; i < nodes.length; i++) {
+      if (nodes[i].path === path) {
+        output = nodes[i];
+      } else if (output === undefined) {
+        return this.traverseChoices(nodes[i].choices, path);
+      }
     }
-    return this.traverseNodes(nodes, this.formatKey(key));
+    return output;
   }
-  getCurrentNode() { 
-    return this.state.currentNode ? this.state.currentNode : this.props.nodes['/'];
+  getQuestion(nodes, path) {
+    if (path === "/") {
+      this.props.router.push(nodes[0].path);
+    }
+    return this.traverseQuestions(nodes, this.formatKey(path));
   }
   show() {
-    this.refs.title.animate();    
-     _.delay(()=> {   
-      let count = 0;    
+    this.refs.title.animate();
+    _.delay(() => {
+      let count = 0;
       for (var child in this.refs) {
         if (this.refs.hasOwnProperty(child)) {
-           this.refs[child].animate('fade-in', count);
-           count++;              
+          this.refs[child].animate('fade-in', count);
+          count++;
         }
       }
     }, 100);
   }
-  filter(key) {
-    let node = this.getNodes(this.state.currentNode ? this.state.currentNode : this.props.nodes['/'], key);
-    node = node ? node : this.getNodes(this.props.nodes, key);
-    let list = this.getElements(node);
-    
-    this.setState({ list: list, location: key, currentNode: node });
+  filter(path) {
+    let question = this.getQuestion(this.props.nodes.questions, path);
+    let choices = question.choices;
+    this.setState({ choices: choices, location: question.path, currentQuetion: question });
 
     this.show();
   }
   render() {
     return (
       <div className='wrapper'>
-        <Hero/>
-        <Title ref={'title'} {...this.state.currentNode}/>
+        <Hero />
+        <Title ref={'title'} {...this.state.currentQuetion} />
         <div className='list'>
-        {
-          this.state.list.map((elmt, index) => {
-            return (
-              <Box ref={`box-${index}`} key={elmt.model.path} {...elmt.model} />
-            )
-          })
-        }
+          {
+            this.state.choices.map((elmt, index) => {
+              return (
+                <Box ref={`box-${index}`} key={elmt.path} {...elmt} />
+              )
+            })
+          }
         </div>
       </div>
     )

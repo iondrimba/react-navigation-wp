@@ -22,6 +22,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -44,38 +45,44 @@ h1 {
 }
 
 .hero {
-  display: inline-block;
-  width: 100%;
-  height: 300px;
+  align-items: center;
   background-color: #191969;
   color: #fff;
+  display: flex;
+  height: 300px;
+  justify-content: center;
   padding: 20px;
+  width: 100%;
 }
 
 .list {
-  padding: 20px;
   display: flex;
-  width: 1100px;
+  flex-wrap: wrap;
   margin: 0 auto;
+  padding: 20px;
+  width: 1100px;
 }
 
 .box {
   background-color: #333;
-  display: block;
-  margin-bottom: 10px;
-  max-width: 250px;
-  min-height: 150px;
-  position: relative;
-  margin-right: 20px;
+  border-radius: 6px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border-radius: 6px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  max-width: 250px;
+  min-height: 150px;
+  opacity: 0;
   overflow: hidden;
+  position: relative;
   transform: translateY(40px);
-  transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-  opacity: 0; 
+  transition: all .25s cubic-bezier(.175, .885, .32, 1.275);
   will-change: all;
+}
+
+.box:nth-child(4n+4) {
+  margin-right: 0;
 }
 
 .box.fade-in {
@@ -84,29 +91,31 @@ h1 {
 }
 
 .box h1 {
+  background-color: rgba(0, 0, 0, .39);
   color: #fff;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.39);
-  width: 100%;
   font-size: 16pt;
-  padding: 10px;
   font-weight: 500;
-  text-transform: capitalize;
+  overflow: hidden;
+  padding: 10px;
+  position: absolute;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .box div {
-  display: block;
-  width: 250px;
-  height: 150px;
   background-color: purple;
+  display: block;
+  height: 150px;
+  width: 250px;
 }
 
 .title {
-  text-align: center;
-  padding: 30px;
-  transform: translateY(30px);
-  transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   opacity: 0;
+  padding: 30px;
+  text-align: center;
+  transform: translateY(30px);
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
   will-change: all;
 }
 
