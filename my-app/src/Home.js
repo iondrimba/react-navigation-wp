@@ -70,7 +70,7 @@ class Home extends React.Component {
           count++;
         }
       }
-    }, 100);
+    }, 80);
   }
   filter(path) {
     let question = this.getQuestion(this.props.nodes.questions, path);

@@ -7,7 +7,8 @@ class Box extends React.Component {
     super(props);
 
     this.state = {
-      css: ''
+      css: '',
+      hasNext: this.props.questions.length ? "has-next" : ""
     }
   }
   animate(css, index) {
@@ -16,9 +17,8 @@ class Box extends React.Component {
     }, 70 * index);
   }
   render() {
-
     return (
-      <Link to={this.props.questions.length ? this.props.path : ""} className={`box ${this.state.css}`}>
+      <Link to={this.props.questions.length ? this.props.path : ""} className={`box ${this.state.css} ${this.state.hasNext}`}>
         <h1>{this.props.title}</h1>
         <div style={{ backgroundColor: this.props.color }} ></div>
       </Link>

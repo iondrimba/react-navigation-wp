@@ -55,6 +55,14 @@ h1 {
   width: 100%;
 }
 
+.box.has-next div {
+  background-color: #d42727 !important;
+}
+
+.box.has-next {
+  cursor: pointer;
+}
+
 .list {
   display: flex;
   flex-wrap: wrap;
@@ -66,6 +74,7 @@ h1 {
 .box {
   background-color: #333;
   border-radius: 6px;
+  cursor: not-allowed;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
